@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Hot Beans Web</title>
+    <link rel="stylesheet" href="assets/mycssstyle/mystylecss.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-custom">
+                        <div class="logo-container">
+                          <img src="assets/images/hotbeansweblogo-removebg-preview.png" class="nav-logo" alt="Hot Beans Web Logo">
+                        </div>  
+                    <ul class="">
+                        <li><a href="home.html.html">About</a></li>
+                        <li><a href="meetthestaff.html">Meet the Staff</a></li>
+                        <li><a href="jobrequirement.html">Job Requirements</a></li>
+                        <li><a href="course.html" >Courses</a></li>
+                        <li><a href="apply.html" >Apply Here</a></li>
+                    </ul>
+                <br><br>
+            </header>
+
+    <main>
+        <h1 class="hot-text">Apply</h1>
+        <div class="apply-container">
+            <form action="#" method="post" class="apply-form">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                
+                    <input type="date" id="dob" name="dob" required min="1940-01-01" max="2006-12-3">
+                    
+
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Please type your phone number here" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group cv-upload">
+                    <label for="cv">CV</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                        <button type="button" class="upload-button">Choose file from device</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        © Hot Beans Web
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById('cv');
+        const uploadButton = document.querySelector('.upload-button');
+        
+        fileInput.addEventListener('change', function() {
+            if (this.files.length > 0) {
+                uploadButton.textContent = this.files[0].name;
+            } else {
+                uploadButton.textContent = 'Choose file from device';
+            }
+        });
+    </script>
+</body>
+</html>
